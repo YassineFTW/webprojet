@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="parcours.html">Parcours</a></li>
+                <li><a href="competences.html">Compétences</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="manifestations.html">Manifestations</a></li>
+                <li><a href="matieres.html">Matières</a></li>
+                <li><a href="quiz.html" class="active">Quiz</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="content-section">
+            <h1>Quiz : Testez vos connaissances sur le web !</h1>
+            <form id="quiz-form">
+                <div class="question">
+                    <label>1. Quel est le langage utilisé pour les pages web ?</label>
+                    <div class="answers">
+                        <label><input type="radio" name="1" value="HTML"> HTML</label>
+                        <label><input type="radio" name="1" value="Python"> Python</label>
+                        <label><input type="radio" name="1" value="Langage C"> Langage C</label>
+                    </div>
+                </div>
+                <div class="question">
+                    <label>2. C'est quoi HTML ?</label>
+                    <div class="answers">
+                        <label><input type="radio" name="2" value="HyperText Markup Language"> HyperText Markup Language</label>
+                        <label><input type="radio" name="2" value="HyperText Modeling Language"> HyperText Modeling Language</label>
+                        <label><input type="radio" name="2" value="HyperText Marketing Language"> HyperText Marketing Language</label>
+                    </div>
+                </div>
+                <div class="question">
+                    <label>3. C'est quoi CSS ?</label>
+                    <div class="answers">
+                        <label><input type="radio" name="3" value="Cascading Style Sheets"> Cascading Style Sheets</label>
+                        <label><input type="radio" name="3" value="Creative Style Sheets"> Creative Style Sheets</label>
+                    </div>
+                </div>
+                <div class="question">
+                    <label>4. C'est quoi JavaScript ?</label>
+                    <div class="answers">
+                        <label><input type="radio" name="4" value="Un langage de programmation côté client"> Un langage de programmation côté client</label>
+                        <label><input type="radio" name="4" value="Un langage de style"> Un langage de style</label>
+                        <label><input type="radio" name="4" value="Cest le meme comme java"> C'est le meme comme java</label>
+                    </div>
+                </div>
+                <div class="question">
+                    <label>5. Quel est un exemple de sélecteur CSS ?</label>
+                    <div class="answers">
+                        <label><input type="radio" name="5" value=".class"> .class</label>
+                        <label><input type="radio" name="5" value="def"> def</label>
+                    </div>
+                </div>
+                <div class="question">
+                    <label>6. Quelle propriété CSS permet de définir la couleur du texte ?</label>
+                    <div class="answers">
+                        <label><input type="radio" name="6" value="color"> color</label>
+                        <label><input type="radio" name="6" value="border"> border</label>
+                    </div>
+                </div>
+                <div class="question">
+                    <label>7. Quelle balise HTML est utilisée pour insérer une image ?</label>
+                    <div class="answers">
+                        <label><input type="radio" name="7" value="img"> &lt;img&gt;</label>
+                        <label><input type="radio" name="7" value="image"> &lt;image&gt;</label>
+                    </div>
+                </div>
+                <div class="question">
+                    <label>8. Dans le modèle de boîte CSS, quelle propriété définit la largeur totale de l'élément ?</label>
+                    <div class="answers">
+                        <label><input type="radio" name="8" value="width"> width</label>
+                        <label><input type="radio" name="8" value="height"> height</label>
+                    </div>
+                </div>
+                <div class="question">
+                    <label>9. Quelle est la langage entre ceux-ci utilisés pour le développement web ?</label>
+                    <div class="answers">
+                        <label><input type="radio" name="9" value="HTML"> HTML</label>
+                        <label><input type="radio" name="9" value="AutoCAD"> AutoCAD</label>
+                        <label><input type="radio" name="9" value="Math"> Mathematique</label>
+                    </div>
+                </div>
+                <div class="question">
+                    <label>10. Quel est le framework populaire pour le développement web ?</label>
+                    <div class="answers">
+                        <label><input type="radio" name="10" value="React"> React</label>
+                        <label><input type="radio" name="10" value="Oracle"> Oracle</label>
+                        <label><input type="radio" name="10" value="Microsoft"> Microsoft</label>
+                    </div>
+                </div>
+                <button type="submit">Valider</button>
+            </form>
+            <div id="quiz-result"></div>
+            <div id="correct-answers"></div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Mon Site Personnel | Tous droits réservés</p>
+    </footer>
+    <script>
+        document.getElementById('quiz-form').addEventListener('submit', function (e) {
+            e.preventDefault(); // yne7i reload mte3 page
+    
+
+            const correctRep1 = 'HTML';
+            const correctRep2 = 'HyperText Markup Language';
+            const correctRep3 = 'Cascading Style Sheets';
+            const correctRep4 = 'Un langage de programmation côté client';
+            const correctRep5 = '.class';
+            const correctRep6 = 'color';
+            const correctRep7 = 'img';
+            const correctRep8 = 'width';
+            const correctRep9 = 'HTML';
+            const correctRep10 = 'React'; 
+    
+            let score = 0;
+            let resultHTML = '';
+    
+
+            const q1 = document.querySelector('input[name="1"]:checked');
+            if (q1 && q1.value === correctRep1) {
+                score++;
+                resultHTML += `<p>Question 1: Correct</p>`;
+            } else {
+                resultHTML += `<p>Question 1: Incorrect (La réponse correcte est: ${correctRep1})</p>`;
+            }
+    
+            const q2 = document.querySelector('input[name="2"]:checked');
+            if (q2 && q2.value === correctRep2) {
+                score++;
+                resultHTML += `<p>Question 2: Correct</p>`;
+            } else {
+                resultHTML += `<p>Question 2: Incorrect (La réponse correcte est: ${correctRep2})</p>`;
+            }
+    
+            const q3 = document.querySelector('input[name="3"]:checked');
+            if (q3 && q3.value === correctRep3) {
+                score++;
+                resultHTML += `<p>Question 3: Correct</p>`;
+            } else {
+                resultHTML += `<p>Question 3: Incorrect (La réponse correcte est: ${correctRep3})</p>`;
+            }
+    
+            const q4 = document.querySelector('input[name="4"]:checked');
+            if (q4 && q4.value === correctRep4) {
+                score++;
+                resultHTML += `<p>Question 4: Correct</p>`;
+            } else {
+                resultHTML += `<p>Question 4: Incorrect (La réponse correcte est: ${correctRep4})</p>`;
+            }
+    
+            const q5 = document.querySelector('input[name="5"]:checked');
+            if (q5 && q5.value === correctRep5) {
+                score++;
+                resultHTML += `<p>Question 5: Correct</p>`;
+            } else {
+                resultHTML += `<p>Question 5: Incorrect (La réponse correcte est: ${correctRep5})</p>`;
+            }
+    
+            const q6 = document.querySelector('input[name="6"]:checked');
+            if (q6 && q6.value === correctRep6) {
+                score++;
+                resultHTML += `<p>Question 6: Correct</p>`;
+            } else {
+                resultHTML += `<p>Question 6: Incorrect (La réponse correcte est: ${correctRep6})</p>`;
+            }
+    
+            const q7 = document.querySelector('input[name="7"]:checked');
+            if (q7 && q7.value === correctRep7) {
+                score++;
+                resultHTML += `<p>Question 7: Correct</p>`;
+            } else {
+                resultHTML += `<p>Question 7: Incorrect (La réponse correcte est: ${correctRep7})</p>`;
+            }
+    
+            const q8 = document.querySelector('input[name="8"]:checked');
+            if (q8 && q8.value === correctRep8) {
+                score++;
+                resultHTML += `<p>Question 8: Correct</p>`;
+            } else {
+                resultHTML += `<p>Question 8: Incorrect (La réponse correcte est: ${correctRep8})</p>`;
+            }
+    
+            const q9 = document.querySelector('input[name="9"]:checked');
+            if (q9 && q9.value === correctRep9) {
+                score++;
+                resultHTML += `<p>Question 9: Correct</p>`;
+            } else {
+                resultHTML += `<p>Question 9: Incorrect (La réponse correcte est: ${correctRep9})</p>`;
+            }
+    
+            const q10 = document.querySelector('input[name="10"]:checked');
+            if (q10 && q10.value === correctRep10) {
+                score++;
+                resultHTML += `<p>Question 10: Correct</p>`;
+            } else {
+                resultHTML += `<p>Question 10: Incorrect (La réponse correcte est: ${correctRep10})</p>`;
+            }
+    
+
+            document.getElementById('quiz-result').textContent = `Votre score : ${score} / 10`;
+            document.getElementById('correct-answers').innerHTML = resultHTML;
+        });
+    </script>
+    
+    
+    
+</body>
+</html>

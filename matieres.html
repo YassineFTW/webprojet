@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matières</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<style>
+    .styled-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1rem auto;
+        font-size: 1.2rem;
+        min-width: 600px;
+        background-color: #21262d;
+        color: #c9d1d9;
+        border: 2px solid #58a6ff;
+        box-shadow: 0 0 15px rgba(88, 166, 255, 0.7);
+        text-align: center;
+    }
+    
+    .styled-table thead tr {
+        background-color: #161b22;
+        color: #58a6ff;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    
+    .styled-table th, .styled-table td {
+        padding: 1rem 1.5rem;
+        border: 1px solid #58a6ff;
+    }
+    
+    .styled-table tbody tr {
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    
+    .styled-table tbody tr:nth-of-type(even) {
+        background-color: #161b22;
+    } /*bch yekbar ki n3adi souris*/
+    
+    .styled-table tbody tr:hover {
+        background-color: #2ea043;
+        transform: scale(1.02);
+        color: #fff;
+    }
+    
+    .styled-table td strong {
+        color: #58a6ff;
+    }
+    </style>
+<body>
+    <header>
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="parcours.html">Parcours</a></li>
+                <li><a href="competences.html">Compétences</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="manifestations.html">Manifestations</a></li>
+                <li><a href="matieres.html" class="active">Matières</a></li>
+                <li><a href="quiz.html">Quiz</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="content-section">
+            <h1>Matières Etudiées et Projets Réalisés </h1>
+            <table class="styled-table">
+                <thead>
+                    <tr>
+                        <th>Matières / Projets</th>
+                        <th>Description</th>
+                        <th>Image</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Matière 1</strong></td>
+                        <td>Langage C</td>
+                        <td><img src="images/c.png" alt="c"></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Matière 2</strong></td>
+                        <td>Développement Web</td>
+                        <td><img src="images/htmlcssjs.png" alt="htmlcssjs"></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Matière 3</strong></td>
+                        <td>Bases de données</td>
+                        <td><img src="images/sql.png" alt="sql"></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Matière 4</strong></td>
+                        <td>PHP</td>
+                        <td><img src="images/php.png" alt="php"></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Projet</strong></td>
+                        <td>Création d'une application web "MediVital"</td>
+                        <td><img src="images/logo.png" alt="MediVital"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Mon Site Personnel | Tous droits réservés</p>
+    </footer>
+</body>
+</html>
